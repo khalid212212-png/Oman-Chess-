@@ -131,7 +131,9 @@ const TOURNAMENTS=[
 ];
 /* ===== رابط البث المباشر من DGT (LiveChessCloud) ===== */
 const LIVE=[
- {name:"بطولة الرستاق الدولية للشطرنج الخاطف 2026",url:"https://www.chess.com/ar/events/5th-south-al-batinah-international-blitz-chess-championship-2026/games"}
+ {name:"البث على Chess.com",url:"https://www.chess.com/ar/events/5th-south-al-batinah-international-blitz-chess-championship-2026/games"},
+ {name:"البث على Lichess",url:"https://lichess.org/broadcast/5th-south-al-batinah-international-blitz-chess-championship-2026/round-1/Uh9mA7Xn"},
+ {name:"البث على DGT",url:"https://view.livechesscloud.com/#db2277e6-8b6d-4a4c-a07d-f98c4687742e"}
 ];
 /* ======================================================= */
 const E=t=>String(t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -143,7 +145,7 @@ tl.innerHTML=list.length?list.map(t=>{
  const past=t.date&&t.date<today;
  return '<div class="card"><h3>'+E(t.name)+'</h3><div class="m">'+E(t.date)+(t.place?' · '+E(t.place):'')+'</div>'+
  (past?'<p class="m">انتهت البطولة</p>':ok(t.form)?'<a class="btn" target="_blank" rel="noopener" href="'+E(t.form)+'">سجّل الآن</a>':'<p class="m">رابط التسجيل سيُعلن قريباً</p>')+'</div>'}).join(""):'<div class="card">لا توجد بطولات حالياً.</div>';
-document.getElementById("lv").innerHTML=LIVE.length?LIVE.map(l=>'<div style="margin:10px 0"><h3 style="margin:0">'+E(l.name)+'</h3><p class="m">تابع المباريات نقلة بنقلة مباشرة</p>'+(ok(l.url)?'<a class="btn g" target="_blank" rel="noopener" href="'+E(l.url)+'">شاهد البث المباشر ♟</a>':'')+'</div>').join(""):'<p class="m">سيُضاف رابط البث المباشر عند بدء البطولة.</p>';
+document.getElementById("lv").innerHTML=LIVE.length?LIVE.map(l=>'<div style="margin:10px 0"><h3 style="margin:0">'+E(l.name)+'</h3><p class="m">بطولة الرستاق الدولية للشطرنج الخاطف 2026</p>'+(ok(l.url)?'<a class="btn g" target="_blank" rel="noopener" href="'+E(l.url)+'">شاهد البث المباشر ♟</a>':'')+'</div>').join(""):'<p class="m">سيُضاف رابط البث المباشر عند بدء البطولة.</p>';
 </script>
 </body>
 </html>
